@@ -1,0 +1,27 @@
+<div class="my-3">
+    <h1>String Interpolation</h1>
+    <hr />
+    <p>{{nome}}</p>
+</div>
+
+<div class="my-3">
+    <h1>Property Binding</h1>
+    <hr />
+    <img [src]="imagem" [height]="batata" />
+    <a [href]="link" target="_blank">{{labelLink}}</a>
+</div>
+
+<div class="my-3">
+    <h1>Event Binding</h1>
+    <button (click)="onAumentarAltura()" class="btn btn-danger">Aumentar altura</button>
+    <button (click)="onDiminuirAltura()" class="btn btn-warning">Diminuir altura</button>
+</div>
+
+<div class="my-3">
+    <h1>Two-way data binding</h1>
+    <hr />
+    <input class="form-control" type="text" [(ngModel)]="labelLink" />
+    <button class="btn btn-success" (click)="onLimpar()">
+        Limpar
+    </button>
+</div>

@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutoComponent } from './components/produto/produto.component';
+import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { ProdutoComponent } from './components/produto/produto.component';
     NavbarComponent,
     BannerComponent,
     ProdutosComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    TesteDataBindingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
 <div class="card mb-1" style="width: 18rem;">
-    <img src="https://i.picsum.photos/id/953/400/400.jpg?hmac=sCGl1xt9pdRyzGnhO5N_HVo_bObR1VVbUitw72cZ7K4" class="card-img-top" alt="...">
+    <img [src]="imagem" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Nome do Produto</h5>
-        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, praesentium?</p>
-        <button class="btn btn-primary">Comprar</button>
+        <h5 class="card-title">{{nomeDoProduto}}</h5>
+        <p class="card-text">{{descricao}}</p>
+        <button (click)="onComprar()" class="btn btn-primary">Comprar</button>
     </div>
 </div>
