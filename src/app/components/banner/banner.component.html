@@ -5,11 +5,18 @@
     <!-- <button (click)="onToggle()" class="btn {{oculto? 'btn-primary':'btn-danger'}}">
         {{oculto ? 'Mostrar destaques' : 'Ocultar destaques'}}
     </button> -->
-    <button (click)="onToggle()" [class]="classesBtn">
+    <button class="btn" (click)="onToggle()" [ngClass]="{'btn-primary': oculto, 'btn-danger': !oculto}">
         {{callToAction}}
     </button>
-    <ul [hidden]="oculto">
-        <li>Produtos de informática com 30% OFF</li>
-        <li>Produtos de Limpeza com 20% a partir de R$ 300,00</li>
+    <ul *ngIf="!oculto; else mensagem">
+        <li *ngFor="let destaque of destaques; index as i">
+            #{{i + 1}} - {{destaque}}
+        </li>
     </ul>
+    <ng-template #mensagem>
+        <br />
+        <small class="text-muted">
+            Você pode clicar no botão para ter os destaques
+        </small>
+    </ng-template>
 </div>

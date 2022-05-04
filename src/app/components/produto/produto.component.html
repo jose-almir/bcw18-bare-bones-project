@@ -1,8 +1,38 @@
 <div class="card mb-1" style="width: 18rem;">
-    <img [src]="imagem" class="card-img-top" alt="...">
+    <img [src]="produto.imagem" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">{{nomeDoProduto}}</h5>
-        <p class="card-text">{{descricao}}</p>
+        <h5 class="card-title">{{produto.nomeDoProduto}}</h5>
+        <p class="card-text">{{produto.descricao}}</p>
+        <h3 [ngClass]="{'text-muted riscado': produto.emPromocao, 'text-success': !produto.emPromocao}">
+            {{produto.preco | currency:'BRL'}}
+        </h3>
+        <div *ngIf="produto.emPromocao">
+            <h3 class="text-success">{{precoDesconto() | currency: 'BRL'}}</h3>
+            <h3>
+                <span [ngStyle]="{'font-family': 'monospace'}" class="badge bg-success">
+                    {{produto.desconto | percent}} OFF
+                </span>
+            </h3>
+        </div>
+        <div [ngSwitch]="produto.categoria">
+            <span class="badge bg-success" *ngSwitchCase="'eletro'">Eletrônicos</span>
+            <span class="badge bg-warning" *ngSwitchCase="'moveis'">Móveis</span>
+            <span class="badge bg-danger" *ngSwitchCase="'limpeza'">Limpeza</span>
+            <span class="badge bg-dark" *ngSwitchDefault>Outros</span>
+        </div>
+        <!-- Alternativa ao ngSwitch -->
+        <!-- <div>
+            <span *ngIf="produto.categoria === 'eletro'" class="badge bg-success">
+                Eletrônicos
+            </span>
+            <span *ngIf="produto.categoria === 'moveis'" class="badge bg-warning">
+                Móveis
+            </span>
+            <span *ngIf="produto.categoria === 'limpeza'" class="badge bg-danger">
+                Limpeza
+            </span>
+            Não tenho como ter um caso default 
+        </div> -->
         <button (click)="onComprar()" class="btn btn-primary">Comprar</button>
     </div>
 </div>

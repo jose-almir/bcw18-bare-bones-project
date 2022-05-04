@@ -12,6 +12,13 @@ export class BannerComponent implements OnInit {
   callToAction: string = 'Mostrar destaques';
   oculto: boolean = true;
   classesBtn: string = "btn btn-primary";
+  
+  destaques: string[] = [
+    "Produtos de informática com 30% OFF",
+    "Produtos de Limpeza com 20% a partir de R$ 300,00",
+    "Vale-presentes de R$ 100 da PlayStore",
+    "Gift Cards de Valorant"
+  ];
 
   onToggle() {
     this.oculto = !this.oculto;
