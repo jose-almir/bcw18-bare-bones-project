@@ -1,5 +1,18 @@
 <h1>Produtos</h1>
 <hr />
 <div class="mx-1">
-    <app-produto *ngFor="let produto of produtos"></app-produto>
+    <p>Produtos no carrinho:
+        <span class="badge bg-primary">{{carrinho.length}}</span>
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col" *ngFor="let produto of produtos">
+                <app-produto [dadoProduto]="produto" (onCarrinho)="addCarrinho($event)">
+                    <p *ngIf="produtoNoCarrinho(produto)" class="text-muted">
+                        *Produto no carrinho
+                    </p>
+                </app-produto>
+            </div>
+        </div>
+    </div>
 </div>

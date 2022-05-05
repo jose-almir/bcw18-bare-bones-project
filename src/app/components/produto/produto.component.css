@@ -1,3 +1,8 @@
 .riscado {
     text-decoration: line-through;
 }
+
+.produto-img {
+    max-height: 300px;
+    object-fit: cover;
+}

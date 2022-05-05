@@ -1,5 +1,5 @@
 <div class="card mb-1" style="width: 18rem;">
-    <img [src]="produto.imagem" class="card-img-top" alt="...">
+    <img [src]="produto.imagem" class="card-img-top produto-img" alt="...">
     <div class="card-body">
         <h5 class="card-title">{{produto.nomeDoProduto}}</h5>
         <p class="card-text">{{produto.descricao}}</p>
@@ -34,5 +34,6 @@
             Não tenho como ter um caso default 
         </div> -->
         <button (click)="onComprar()" class="btn btn-primary">Comprar</button>
+        <ng-content></ng-content>
     </div>
 </div>
