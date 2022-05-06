@@ -10,6 +10,10 @@ import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { EllipsisPipe } from './shared/pipes/ellipsis/ellipsis.pipe';
+import { AbbvPipe } from './shared/pipes/abbv/abbv.pipe';
+import { SumPipe } from './shared/pipes/sum/sum.pipe';
+import { CensorPipe } from './shared/pipes/censor/censor.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { FormsModule } from '@angular/forms';
     BannerComponent,
     ProdutosComponent,
     ProdutoComponent,
-    TesteDataBindingComponent
+    TesteDataBindingComponent,
+    EllipsisPipe,
+    AbbvPipe,
+    SumPipe,
+    CensorPipe
   ],
   imports: [
     BrowserModule,

@@ -25,3 +25,54 @@
         Limpar
     </button>
 </div>
+
+<div class="my-3">
+    <h1>Pipes</h1>
+    <hr />
+    <h3>DatePipe</h3>
+    <p>Formatar datas</p>
+    <p>{{hoje | date}}</p>
+    <p>{{hoje | date:'medium'}}</p>
+    <p>{{hoje | date:'shortTime'}}</p>
+    <p>{{hoje | date:'dd/MM/YYYY'}}</p>
+    <p>{{hoje | date:'dd-MM-YYYY'}}</p>
+    <p>{{hoje | date:'dd/MM/YYYY hh:mm:ss'}}</p>
+    <p>{{hoje | date:'SSS'}}</p>
+    <hr/>
+    <h3>Currency</h3>
+    <p>Formata números em formatos monetários</p>
+    <p>{{numero | currency}}</p>
+    <p>{{numero | currency:'BRL'}}</p>
+    <p>{{numero | currency:'BRL':'code'}}</p>
+    <p>{{numero | currency:'BRL':'symbol':'1.3-8'}}</p>
+    <p>{{0.42534423423423 | currency:'BRL':'symbol':'1.3-8'}}</p>
+    <p>{{numero | currency:'BRL':'symbol':'3.3-8'}}</p>
+
+    <h3>Percent</h3>
+    <p>Representa como percentual</p>
+    <p>{{valor | percent}}</p>
+    <p>{{valor | percent:'1.2-2'}}</p>
+
+    <h3>Decimal</h3>
+    <p>Formata números</p>
+    <p>{{valor | number:'1.2-2'}}</p>
+
+    <p>{{mensagem | uppercase}}</p>
+    <p>{{mensagem | lowercase}}</p>
+    <p>{{mensagem | titlecase}}</p>
+
+    <h1>{{agora | date:'HH:mm:ss'}}</h1>
+    <p>{{'Olá como vai? dadasdasdasdasdas8wueioqweuqowieuqwue' | ellipsis:10}}</p>
+
+    <p>{{'José Almir' | abbv}}</p>
+    <p>{{'José Almir de Souza' | abbv}}</p>
+    <p>{{'João' | abbv}}</p>
+
+    <p>{{array | json}}</p>
+    <p>{{array | sum}}</p>
+    <button class="btn btn-primary" (click)="addArray()">
+        ADD
+    </button>
+
+    <p>{{'Eu jogo lol e valorant' | censor:'lol,valorant'}}</p>
+</div>
