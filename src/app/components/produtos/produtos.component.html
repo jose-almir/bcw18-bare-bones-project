@@ -1,6 +1,11 @@
 <h1>Produtos</h1>
 <hr />
 <div class="mx-1">
+    <!-- Se usar apenas 'novo' ele concatena na rota atual
+    Exemplo: /produtos
+    [routerLink]="'novo'" ===> /produtos/novo
+    -->
+    <a [routerLink]="'/produtos/novo'" class="btn btn-primary btn-sm">Novo Produto</a>
     <p>Produtos no carrinho:
         <span class="badge bg-primary">{{carrinho.length}}</span>
     </p>
