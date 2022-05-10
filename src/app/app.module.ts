@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,12 @@ import { EllipsisPipe } from './shared/pipes/ellipsis/ellipsis.pipe';
 import { AbbvPipe } from './shared/pipes/abbv/abbv.pipe';
 import { SumPipe } from './shared/pipes/sum/sum.pipe';
 import { CensorPipe } from './shared/pipes/censor/censor.pipe';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -26,7 +32,9 @@ import { CensorPipe } from './shared/pipes/censor/censor.pipe';
     EllipsisPipe,
     AbbvPipe,
     SumPipe,
-    CensorPipe
+    CensorPipe,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,9 @@ import { CensorPipe } from './shared/pipes/censor/censor.pipe';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
