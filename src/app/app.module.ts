@@ -18,6 +18,7 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 
 registerLocaleData(localePt);
 
@@ -34,7 +35,8 @@ registerLocaleData(localePt);
     SumPipe,
     CensorPipe,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NovoProdutoComponent
   ],
   imports: [
     BrowserModule,
