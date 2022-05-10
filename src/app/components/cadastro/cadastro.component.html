@@ -1,0 +1,37 @@
+<form [formGroup]="cadastroForm" class="m-1">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome Completo</label>
+    <input id="nome" type="text" class="form-control" formControlName="nome" />
+    <small class="text-danger" *ngIf="nome?.invalid && nome?.touched">
+      <span *ngIf="nome?.hasError('required')">O nome é obrigatorio</span>
+      <span *ngIf="nome?.hasError('minlength')">O mínimo é 5 caracteres</span>
+      <span *ngIf="nome?.hasError('maxpalavras')">O máximo é 9 palavras</span>
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input id="email" type="text" class="form-control" formControlName="email" />
+    <small class="text-danger" *ngIf="email?.invalid && email?.touched">
+        <span *ngIf="email?.hasError('required')">O email é obrigatorio</span>
+        <span *ngIf="email?.hasError('email')">Email inválido</span>
+        <span *ngIf="email?.hasError('onlysoulcode')">Só é permitido email da soulcode</span>
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="endereco" class="form-label">Endereço</label>
+    <input id="endereco" type="text" class="form-control" formControlName="endereco" />
+    <small class="text-danger" *ngIf="endereco?.invalid && endereco?.touched">
+        <span *ngIf="endereco?.hasError('required')">O endereço é obrigatorio</span>
+        <span *ngIf="endereco?.hasError('maxlength')">O endereço tem mais de 50 caracteres</span>
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="senha" class="form-label">Senha</label>
+    <input id="senha" type="text" class="form-control" formControlName="senha" />
+    <small class="text-danger" *ngIf="senha?.invalid && senha?.touched">
+        <span *ngIf="senha?.hasError('required')">A senha é obrigatorio</span>
+        <span *ngIf="senha?.hasError('minlength')">A senha deve ter no mínimo 8 caracteres</span>
+    </small>
+  </div>
+  <button class="btn btn-primary" [disabled]="cadastroForm.invalid">Cadastrar</button>
+</form>

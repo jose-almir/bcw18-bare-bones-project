@@ -3,6 +3,7 @@
         <label for="email" class="form-label">Email</label>
         <input #emailInp="ngModel" [(ngModel)]="email" id="email" name="email" type="email" class="form-control" placeholder="Seu email" required />
         <small *ngIf="emailInp.touched && emailInp.invalid" class="text-danger">O campo é inválido</small>
+        <!-- <small *ngIf="emailInp.touched && emailInp.hasError('required')" class="text-danger">Email obrigatório</small> -->
     </div>
     <div class="mb-3">
         <label for="senha" class="form-label">Senha</label>
