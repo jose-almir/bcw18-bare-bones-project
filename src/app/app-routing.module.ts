@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
+import { SorteioComponent } from './components/sorteio/sorteio.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
 
 // Gerenciar as rotas da aplicação no geral
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'teste-data-binding', component: TesteDataBindingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'sorteio', component: SorteioComponent },
 ];
 
 @NgModule({

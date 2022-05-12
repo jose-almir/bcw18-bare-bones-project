@@ -1,0 +1,23 @@
+<div class="m-1">
+  <div class="mb-3">
+    <label for="values" class="form-label">Nomes</label>
+    <textarea
+      id="values"
+      class="form-control"
+      placeholder="Nomes em cada linha"
+      [(ngModel)]="valores"
+    ></textarea>
+  </div>
+  <div *ngIf="loading">
+    <div  class="spinner-border"></div>
+    Carregando...
+  </div>
+  <button
+    class="btn btn-primary"
+    (click)="onSorteio()"
+    [disabled]="valores.length === 0"
+  >
+    Sortear
+  </button>
+  <h1 *ngIf="sorteado" class="display-3">O sorteado foi: {{sorteado}}</h1>
+</div>

@@ -13,7 +13,6 @@ function onlySoulcode(control: AbstractControl): ValidationErrors | null {
       return { onlysoulcode: true };
     }
   }
-// 11H19
   return null;
 }
 
