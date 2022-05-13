@@ -1,22 +1,29 @@
 <div class="container-fluid bg-dark text-light py-2">
-    <h3>{{slogan}}</h3>
-    <p>{{endereco}}</p>
-    <!-- FORMA 1: -->
-    <!-- <button (click)="onToggle()" class="btn {{oculto? 'btn-primary':'btn-danger'}}">
+  <h3>{{ slogan }}</h3>
+  <p>{{ endereco }}</p>
+  <!-- FORMA 1: -->
+  <!-- <button (click)="onToggle()" class="btn {{oculto? 'btn-primary':'btn-danger'}}">
         {{oculto ? 'Mostrar destaques' : 'Ocultar destaques'}}
     </button> -->
-    <button class="btn" (click)="onToggle()" [ngClass]="{'btn-primary': oculto, 'btn-danger': !oculto}">
-        {{callToAction}}
-    </button>
-    <ul *ngIf="!oculto; else mensagem">
-        <li *ngFor="let destaque of destaques; index as i">
-            #{{i + 1}} - {{destaque}}
-        </li>
-    </ul>
-    <ng-template #mensagem>
-        <br />
-        <small class="text-muted">
-            Você pode clicar no botão para ter os destaques
-        </small>
-    </ng-template>
+  <button
+    class="btn"
+    (click)="onToggle()"
+    [ngClass]="{ 'btn-primary': oculto, 'btn-danger': !oculto }"
+  >
+    {{ callToAction }}
+  </button>
+  <ul *ngIf="!oculto; else mensagem">
+    <li *ngFor="let destaque of destaques; index as i">
+      #{{ i + 1 }} - {{ destaque }}
+    </li>
+  </ul>
+  <ng-template #mensagem>
+    <br />
+    <small class="text-muted">
+      Você pode clicar no botão para ter os destaques
+    </small>
+  </ng-template>
+  <h5 class="display-5" *ngIf="relojim$ | async as relojim">
+    {{ relojim | date: "HH:mm:ss" }}
+  </h5>
 </div>

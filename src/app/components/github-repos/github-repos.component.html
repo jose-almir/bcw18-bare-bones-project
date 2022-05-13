@@ -1,0 +1,35 @@
+<div class="m-1">
+  <div class="mb-3">
+    <label for="search">Nome do usuário</label>
+    <input
+      type="text"
+      name="search"
+      class="form-control"
+      [(ngModel)]="username"
+      (keyup.enter)="onBuscar()"
+    />
+  </div>
+  <button class="btn btn-primary" [disabled]="username.length === 0" (click)="onBuscar()">
+    Buscar
+  </button>
+  <hr />
+  <div *ngIf="loading" class="spinner-border"></div>
+  <div *ngFor="let rep of resultados" class="card text-white bg-dark mb-3" style="max-width: 18rem">
+    <div class="card-header"><i class="bi bi-github"></i>{{rep.owner.login}}</div>
+    <div class="card-body">
+      <h5 class="card-title">
+        {{rep.name}}
+        <a [href]="rep.html_url" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+      </h5>
+      <p class="card-text">
+        {{rep.description}}
+        <span class="text-muted d-block">{{rep.created_at | date}}</span>
+        <span class="text-muted d-block">{{rep.language}}</span>
+        <span class="text-muted d-block">
+          <i class="bi bi-star-fill"></i>
+          {{rep.stargazers_count}}</span
+        >
+      </p>
+    </div>
+  </div>
+</div>

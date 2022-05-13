@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-banner',
@@ -20,6 +21,17 @@ export class BannerComponent implements OnInit {
     "Gift Cards de Valorant"
   ];
 
+  relojim$?: Observable<Date>;
+
+  constructor() { }
+  
+  ngOnInit(): void {
+    this.relojim$ = interval(1000).pipe(
+      map(() => new Date())
+    );
+
+  }
+
   onToggle() {
     this.oculto = !this.oculto;
 
@@ -30,9 +42,5 @@ export class BannerComponent implements OnInit {
       this.classesBtn = "btn btn-danger";
       this.callToAction = "Ocultar destaques";
     }
-  }
-  constructor() { }
-
-  ngOnInit(): void {
   }
 }
