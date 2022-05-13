@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { SorteioComponent } from './components/sorteio/sorteio.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 registerLocaleData(localePt);
 
@@ -40,7 +41,8 @@ registerLocaleData(localePt);
     LoginComponent,
     NovoProdutoComponent,
     CadastroComponent,
-    SorteioComponent
+    SorteioComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

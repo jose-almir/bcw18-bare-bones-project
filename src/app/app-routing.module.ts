@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { SorteioComponent } from './components/sorteio/sorteio.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'sorteio', component: SorteioComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
