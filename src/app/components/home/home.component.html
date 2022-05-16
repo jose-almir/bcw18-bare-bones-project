@@ -1,1 +1,13 @@
-<p>home works!</p>
+<!-- Mostra o bloco abaixo quando o weather$ emitir valor -->
+<div *ngIf="weather$ | async as clima; else loading">
+  <h1 class="display-1">{{ clima.main.temp }} ºC</h1>
+  <p class="text-muted">Máxima de: {{ clima.main.temp_max }} ºC</p>
+  <p class="text-muted">Mínima de: {{ clima.main.temp_min }} ºC</p>
+</div>
+
+<ng-template #loading>
+  <!--Mostra esse bloco caso o weather$ não tenha emitido valor-->
+  <div class="spinner-border"></div>
+</ng-template>
+
+<p *ngIf="error" class="text-danger">Um erro ocorreu.</p>
