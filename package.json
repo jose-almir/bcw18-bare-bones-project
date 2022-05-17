@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "build:prod": "ng build --sourceMap=false --base-href https://jose-almir.github.io/bcw18-bare-bones-project/",
     "test": "ng test"
   },
   "private": true,
