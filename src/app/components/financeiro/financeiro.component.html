@@ -1,0 +1,39 @@
+<form [formGroup]="movForm" (ngSubmit)="onSubmit()" class="m-1">
+  <div class="mb-3">
+    <label for="" class="form-label">Título</label>
+    <input formControlName="titulo" type="text" class="form-control" />
+    <small class="text-danger" *ngIf="titulo?.touched && titulo?.invalid">
+      <span *ngIf="titulo?.hasError('required')">O campo é obrigatório</span>
+      <span *ngIf="titulo?.hasError('maxlength')">
+        O máximo são 55 caracteres
+      </span>
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Total</label>
+    <input
+      formControlName="total"
+      type="number"
+      class="form-control"
+      step=".01"
+      min="0"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Tipo</label>
+    <select formControlName="tipo" name="" id="" class="form-select">
+      <option value="0">Despesa</option>
+      <option value="1">Receita</option>
+    </select>
+  </div>
+  <button [disabled]="movForm.invalid" class="btn btn-primary">ADD</button>
+</form>
+<hr />
+<div *ngFor="let mov of movs$ | async">
+  <h6>{{ mov.titulo }}</h6>
+  <p
+    [ngClass]="{ 'text-danger': mov.tipo == 0, 'text-success': mov.tipo == 1 }"
+  >
+    {{ mov.tipo == 0 ? "-" : "+" }}{{ mov.total | currency: "BRL" }}
+  </p>
+</div>

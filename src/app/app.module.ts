@@ -24,6 +24,7 @@ import { SorteioComponent } from './components/sorteio/sorteio.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubReposComponent } from './components/github-repos/github-repos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FinanceiroComponent } from './components/financeiro/financeiro.component';
 
 registerLocaleData(localePt);
 
@@ -45,7 +46,8 @@ registerLocaleData(localePt);
     CadastroComponent,
     SorteioComponent,
     NotFoundComponent,
-    GithubReposComponent
+    GithubReposComponent,
+    FinanceiroComponent
   ],
   imports: [
     BrowserModule,
